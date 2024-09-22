@@ -51,3 +51,8 @@
    ```bash
    git clone https://github.com/yourusername/system-health-dashboard.git
    cd system-health-dashboard
+
+2. **Create a Virtual Environment**
+
+  ```bash
+  python -m venv venv
