@@ -36,12 +36,12 @@
 
 ## Installation
 
-### Prerequisites
+  ### Prerequisites
 
 - Python 3.6 or higher
 - pip (Python package installer)
 
-### Steps
+  ### Steps
 
 1. **Clone the Repository**
 
@@ -94,11 +94,11 @@
 
 ## Configuration
 
-### Settngs
+  ### Settngs
   - **Themes**: Switch between Light and Dark modes.
   - **Notification Thresholds**: (Future enhancement) Set custom thresholds for alerts.
 
-### How to Access Settings
+  ### How to Access Settings
   - Click on the "**Settings**" button on the dashboard to open the settings window.
   - Adjust your preferences and click "**Save**".
 
