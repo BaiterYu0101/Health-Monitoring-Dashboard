@@ -1,0 +1,33 @@
+<h1>System Health Dashboard</h1>    
+<p>A cross-platform desktop application to monitor system health metrics such as CPU usage, RAM usage, disk space, and more. Built with Python and PyQt5, it provides real-time monitoring, notifications, and optimization suggestions to keep your system running smoothly.</p><br>
+
+## Table of Contents
+
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Steps](#steps)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Running Tests](#running-tests)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+
+
+
+
+## Features
+<ul>
+  <li>Real-time Monitoring: Displays CPU, RAM, and Disk usage in real-time.</li>
+  <li>Notifications: Alerts for high resource usage with optimization suggestions.</li>
+  <li>Optimization Advice: Provides tips to improve system performance.</li>
+  <li>Settings: Customize application settings like themes.</li>
+  <li>Data Logging: Logs historical performance data for analysis.</li>
+  <li>Cross-Platform: Works on Windows, macOS, and Linux.</li>
+  <li>Extensible: Modular code structure for easy enhancements.</li>
+  <li>Unit Tests: Comprehensive tests for core functionalities.</li>
+</ul>
