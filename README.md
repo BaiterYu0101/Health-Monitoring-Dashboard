@@ -54,5 +54,23 @@
 
 2. **Create a Virtual Environment**
 
+   ```bash
+   python -m venv venv
+
+3. **Activate the Virtual Environment**
+
+- On **Windows**:
+
+   ```bash
+   venv\Scripts\activate
+
+- On **Linux**:
+
   ```bash
-  python -m venv venv
+  source venv/bin/activate
+
+4. **Install Dependencies**
+  ```bash
+  pip install -r requirements.txt
+
+
