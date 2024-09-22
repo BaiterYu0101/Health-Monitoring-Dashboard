@@ -31,3 +31,23 @@
   <li>Extensible: Modular code structure for easy enhancements.</li>
   <li>Unit Tests: Comprehensive tests for core functionalities.</li>
 </ul>
+
+
+## Screenshots
+  Wait for deployment and snap
+
+
+## Installation
+
+### Prerequisites
+
+- Python 3.6 or higher
+- pip (Python package installer)
+
+### Steps
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/yourusername/system-health-dashboard.git
+   cd system-health-dashboard
