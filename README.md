@@ -119,6 +119,8 @@
    ```bash
    python -m unittest discover tests
    ```
+(venv) jerry@JW-MACH-WX9:~/Desktop/Hack Proj/Prototype$ (venv) jerry@JW-MACH-WX9:~/Desktop/Hack Proj/Prototype$ git push
+To github.com:BaiterYu0101/Health-Monitoring-Dashboard.git
 
 ## Project Structure
 
@@ -152,6 +154,8 @@ system-health-dashboard/
 ├── models/                     # Machine learning models
 │   ├── __init__.py
 │   └── predictive_maintenance.py# Predictive maintenance logic
+(venv) jerry@JW-MACH-WX9:~/Desktop/Hack Proj/Prototype$ (venv) jerry@JW-MACH-WX9:~/Desktop/Hack Proj/Prototype$ git push
+To github.com:BaiterYu0101/Health-Monitoring-Dashboard.git
 │
 ├── resources/                  # Static resources (images, logos)
 │   ├── logo.png
@@ -161,6 +165,8 @@ system-health-dashboard/
 ├── tests/                      # Unit tests
 │   ├── __init__.py
 │   ├── test_system_monitor.py  # Tests for system monitoring
+(venv) jerry@JW-MACH-WX9:~/Desktop/Hack Proj/Prototype$ (venv) jerry@JW-MACH-WX9:~/Desktop/Hack Proj/Prototype$ git push
+To github.com:BaiterYu0101/Health-Monitoring-Dashboard.git
 │   └── test_hardware_monitor.py# Tests for hardware monitoring
 │
 ├── README.md                   # Project documentation
@@ -175,6 +181,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 - **psutil**: For accessing system health metrics.
 - **Matplotlib**: For potential future enhancements with data visualization.
 - **Open-Source Community**: For providing valuable resources and inspiration.
+- ***Don't Use Force Push since this is a group project*** 
 
 ## Additional Resources
 
