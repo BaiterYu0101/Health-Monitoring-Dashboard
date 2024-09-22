@@ -49,7 +49,7 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/system-health-dashboard.git
+   git clone https://github.com/yourusername/Health-Monitoring-Dashboard.git
    cd system-health-dashboard
 
 2. **Create a Virtual Environment**
