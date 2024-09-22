@@ -1,0 +1,32 @@
+/* ui/styles.css */
+
+/* General Styles */
+QWidget {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Progress Bars */
+QProgressBar {
+    border: 1px solid #999;
+    border-radius: 5px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #05B8CC;
+    width: 10px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #007BFF;
+    color: #FFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: #0056b3;
+}
