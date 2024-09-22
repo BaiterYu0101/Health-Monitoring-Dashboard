@@ -1,0 +1,7 @@
+joblib==1.4.2
+numpy==2.1.1
+plyer==2.1.0
+psutil==6.0.0
+PyQt5==5.15.11
+PyQt5-Qt5==5.15.15
+PyQt5_sip==12.15.0
