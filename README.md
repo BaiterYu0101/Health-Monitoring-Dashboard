@@ -31,7 +31,10 @@
 
 
 ## Screenshots
-  Wait for deployment and snap
+  ![image](https://github.com/user-attachments/assets/d2b0d0f2-251b-47c3-9241-cb26690f0f84)
+
+  ![image](https://github.com/user-attachments/assets/e78a3abe-7954-4b73-b94c-2f30e13ea589)
+
 
 
 ## Installation
