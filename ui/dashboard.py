@@ -89,19 +89,15 @@ class DashboardApp(QMainWindow):
         self.ram_label.setText(f'RAM Usage: {ram_usage:.2f}%')
         self.disk_label.setText(f'Disk Usage: {disk_usage:.2f}%')
 
-        # Update advice
-        cpu_advice = self.optimization_advisor.get_cpu_advice(cpu_usage)
-        ram_advice = self.optimization_advisor.get_ram_advice(ram_usage)
-        self.advice_label.setText(f'Advice: {cpu_advice} {ram_advice}')
+        advice = self.optimization_advisor.get_cpu_ram_advice(cpu_usage,ram_usage,disk_usage)
+        self.advice_label.setText(f'Advice: {advice}')
 
         # Log data
         self.logger.log_performance_data(cpu_usage, ram_usage, disk_usage)
 
-        # Show notifications if necessary
-        if cpu_usage > 90:
-            self.notification_handler.show_warning('High CPU Usage', cpu_advice)
-        if ram_usage > 90:
-            self.notification_handler.show_warning('High RAM Usage', ram_advice)
+        # Show warning message box
+        if cpu_usage > 5 or ram_usage > 90 or disk_usage > 90:
+            self.notification_handler.show_warning("Warning", advice)
 
     def open_settings(self):
         self.settings_window = SettingsWindow()
