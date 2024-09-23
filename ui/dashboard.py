@@ -72,6 +72,7 @@ class DashboardApp(QMainWindow):
         self.setCentralWidget(container)
 
     def init_timers(self):
+        # Timer for updating the system metrics
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_metrics)
         self.timer.start(1000)  # Update every second
@@ -122,5 +123,7 @@ class DashboardApp(QMainWindow):
             self.notification_handler.show_warning("Warning", advice)
 
     def open_settings(self):
+        # Open the settings window
         self.settings_window = SettingsWindow()
         self.settings_window.show()
+
