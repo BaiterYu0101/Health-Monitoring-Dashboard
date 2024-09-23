@@ -111,15 +111,14 @@ class DashboardApp(QMainWindow):
             self.fan_speed_label.setText('Fan Speed: N/A')
 
         # Update advice
-        cpu_advice = self.optimization_advisor.get_cpu_advice(cpu_usage)
-        ram_advice = self.optimization_advisor.get_ram_advice(ram_usage)
-        self.advice_label.setText(f'Advice: {cpu_advice} {ram_advice}')
+        advice = self.optimization_advisor.get_cpu_ram_advice(cpu_usage, ram_usage, disk_usage)
+        self.advice_label.setText(f'Advice: {advice}')
 
         # Log data
-        self.logger.log_performance_data(cpu_usage, ram_usage, disk_usage)
+        self.logger.log_performance_data(cpu_usage, ram_usage, disk_usage, cpu_temp, fan_speed)
 
-        # Show warning message box
-        if cpu_usage > 5 or ram_usage > 90 or disk_usage > 90:
+        # Show warning message box if thresholds are crossed
+        if cpu_usage > 90 or ram_usage > 90 or disk_usage > 90:
             self.notification_handler.show_warning("Warning", advice)
 
     def open_settings(self):
