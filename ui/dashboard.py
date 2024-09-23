@@ -1,5 +1,3 @@
-# ui/dashboard.py
-
 from PyQt5.QtWidgets import (
     QMainWindow, QLabel, QProgressBar, QVBoxLayout, QWidget, QPushButton
 )
@@ -30,7 +28,7 @@ class DashboardApp(QMainWindow):
         self.init_timers()
 
     def init_ui(self):
-        # Labels and progress bars
+        # Labels and progress bars for CPU, RAM, and Disk Usage
         self.cpu_label = QLabel('CPU Usage:')
         self.cpu_progress = QProgressBar()
         self.cpu_progress.setRange(0, 100)
@@ -42,6 +40,10 @@ class DashboardApp(QMainWindow):
         self.disk_label = QLabel('Disk Usage:')
         self.disk_progress = QProgressBar()
         self.disk_progress.setRange(0, 100)
+
+        # New labels for CPU Temperature and Fan Speed
+        self.cpu_temp_label = QLabel('CPU Temperature:')
+        self.fan_speed_label = QLabel('Fan Speed:')
 
         self.advice_label = QLabel('Advice:')
 
@@ -57,6 +59,11 @@ class DashboardApp(QMainWindow):
         layout.addWidget(self.ram_progress)
         layout.addWidget(self.disk_label)
         layout.addWidget(self.disk_progress)
+
+        # Add temperature and fan speed labels
+        layout.addWidget(self.cpu_temp_label)
+        layout.addWidget(self.fan_speed_label)
+
         layout.addWidget(self.advice_label)
         layout.addWidget(self.settings_button)
 
@@ -70,14 +77,17 @@ class DashboardApp(QMainWindow):
         self.timer.start(1000)  # Update every second
 
     def update_metrics(self):
+        # Get system metrics
         cpu_usage = self.system_monitor.get_cpu_usage()
         ram_usage = self.system_monitor.get_ram_usage()
         disk_usage = self.hardware_monitor.get_disk_usage()
+        cpu_temp = self.system_monitor.get_cpu_temperature()
+        fan_speed = self.system_monitor.get_fan_speed()
 
         # Convert usage values to integers
         cpu_usage_int = int(cpu_usage)
         ram_usage_int = int(ram_usage)
-        disk_usage_int = int(disk_usage)  # Corrected variable name
+        disk_usage_int = int(disk_usage)
 
         # Update progress bars
         self.cpu_progress.setValue(cpu_usage_int)
@@ -89,8 +99,21 @@ class DashboardApp(QMainWindow):
         self.ram_label.setText(f'RAM Usage: {ram_usage:.2f}%')
         self.disk_label.setText(f'Disk Usage: {disk_usage:.2f}%')
 
-        advice = self.optimization_advisor.get_cpu_ram_advice(cpu_usage,ram_usage,disk_usage)
-        self.advice_label.setText(f'Advice: {advice}')
+        # Update temperature and fan speed labels
+        if cpu_temp is not None:
+            self.cpu_temp_label.setText(f'CPU Temperature: {cpu_temp:.2f} °C')
+        else:
+            self.cpu_temp_label.setText('CPU Temperature: N/A')
+
+        if fan_speed is not None:
+            self.fan_speed_label.setText(f'Fan Speed: {fan_speed} RPM')
+        else:
+            self.fan_speed_label.setText('Fan Speed: N/A')
+
+        # Update advice
+        cpu_advice = self.optimization_advisor.get_cpu_advice(cpu_usage)
+        ram_advice = self.optimization_advisor.get_ram_advice(ram_usage)
+        self.advice_label.setText(f'Advice: {cpu_advice} {ram_advice}')
 
         # Log data
         self.logger.log_performance_data(cpu_usage, ram_usage, disk_usage)
