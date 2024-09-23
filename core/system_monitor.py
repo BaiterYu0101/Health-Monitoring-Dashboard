@@ -35,15 +35,20 @@ class SystemMonitor:
                 return (info.CurrentTemperature / 10.0) - 273.15  # Convert from tenths of Kelvin to Celsius
         except ImportError:
             print("WMI module not installed, please install it to fetch temperatures on Windows.")
+        except wmi.x_wmi as e:
+            print(f"WMI is not supported on this system: {e}")
         except Exception as e:
             print(f"Failed to read temperature: {str(e)}")
         return None
 
     def get_fan_speed(self):
         """Returns the current fan speed in RPM."""
-        fans = psutil.sensors_fans()
-        if fans:
-            for name, entries in fans.items():
-                for entry in entries:
-                    return entry.current  # Returns the first fan speed detected
+        try:
+            fans = psutil.sensors_fans()
+            if fans:
+                for name, entries in fans.items():
+                    for entry in entries:
+                        return entry.current  # Returns the first fan speed detected
+        except AttributeError:
+            print("Fan speed monitoring is not supported on this system.")
         return None
